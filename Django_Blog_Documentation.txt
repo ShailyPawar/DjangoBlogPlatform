@@ -1,0 +1,97 @@
+# Django Blog Application - Project Documentation
+
+## Project Overview
+
+This project is a simple yet elegant blog application built using the Django web framework. It allows users to view blog posts dynamically fetched from a database. The admin interface enables authenticated users to add, edit, or delete blog posts. This project is ideal for demonstrating CRUD operations, Django templating, and admin functionalities.
+
+## Features
+
+- Homepage displaying all blog posts with titles, thumbnails, and brief content.
+- Admin panel for managing posts.
+- Dynamic routing for individual blog posts (Read More functionality).
+- Pagination support.
+- Responsive UI using Bootstrap.
+
+## Technologies Used
+
+- **Backend**: Django (Python)
+- **Frontend**: HTML, CSS (Bootstrap)
+- **Database**: SQLite (default with Django)
+
+## Setup Instructions
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/your-username/django-blog.git
+cd django-blog
+```
+
+### Step 2: Create Virtual Environment & Install Dependencies
+
+```bash
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+pip install -r requirements.txt
+```
+
+### Step 3: Apply Migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### Step 4: Create Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+### Step 5: Run Development Server
+
+```bash
+python manage.py runserver
+```
+
+Access the blog at: [http://127.0.0.1:8000](http://127.0.0.1:8000)  
+Access admin panel at: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+
+## Directory Structure
+
+```
+myblog/
+├── blog/
+│   ├── migrations/
+│   ├── templates/
+│   │   └── blog/
+│   │       ├── index.html
+│   │       └── post_detail.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── myblog/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── db.sqlite3
+└── manage.py
+```
+
+## Screenshots
+
+Include screenshots of the homepage, admin panel, and post details (optional).
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
