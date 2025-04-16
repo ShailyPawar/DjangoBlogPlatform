@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-3">{{ post.title }}</h1>
+        <p class="text-center text-muted">By <strong>{{ post.author }}</strong> | {{ post.created_at|date:"F j, Y" }}</p>
+
+        {% if post.image %}
+        <div class="text-center mb-4">
+            <img src="{{ post.image.url }}" alt="Post Image" class="img-fluid rounded">
+        </div>
+        {% endif %}
+
+        <div class="content mb-4">
+            <p>{{ post.content|linebreaks }}</p>
+        </div>
+
+        <div class="text-center">
+            <a href="{% url 'index' %}" class="btn btn-outline-primary">← Back to Blog</a>
+        </div>
+    </div>
+
+    <!-- Optional: Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
